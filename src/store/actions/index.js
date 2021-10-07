@@ -5,6 +5,7 @@ import {
   GET_RESULT_FAIL,
   GET_RESULT_REQUEST,
   GET_RESULT_SUCCESS,
+  SET_SEARCH_TERM,
 } from 'store/types';
 
 export const getResults = (endpoint) => async (dispatch) => {
@@ -26,3 +27,6 @@ export const getResults = (endpoint) => async (dispatch) => {
     });
   }
 };
+
+export const setSearchTerm = (text) => (dispatch) =>
+  dispatch({ type: SET_SEARCH_TERM, payload: text });

@@ -6,10 +6,12 @@ import thunk from 'redux-thunk';
 
 // reducers
 import results from './reducers/resultsReducer';
+import searchTerm from './reducers/searchTermReducer';
 
 // combine reducers
 const rootReducer = combineReducers({
   results,
+  searchTerm,
 });
 
 // configure store
