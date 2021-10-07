@@ -10,7 +10,7 @@ export const Search = () => {
   const [debouncedValue] = useDebounce(text, 300);
 
   useEffect(() => {
-    if (debouncedValue) setSearchTerm(debouncedValue);
+    setSearchTerm(debouncedValue);
   }, [debouncedValue]);
 
   return (
@@ -23,7 +23,11 @@ export const Search = () => {
         onChange={(e) => setText(e.target.value)}
       />
       {text !== '' && (
-        <button type="button" className="absolute top-1.5 right-4 text-2xl text-gray-500 " onClick={() => setText('')}>
+        <button
+          type="button"
+          className="absolute top-1.5 right-4 text-2xl text-gray-500 "
+          onClick={() => setText('')}
+        >
           x
         </button>
       )}

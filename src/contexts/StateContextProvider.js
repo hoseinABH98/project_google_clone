@@ -26,7 +26,16 @@ export const StateContextProvider = ({ children }) => {
   };
 
   return (
-    <StateContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, loading }}>
+    <StateContext.Provider
+      value={{
+        getResults,
+        setResults,
+        results,
+        searchTerm,
+        setSearchTerm,
+        loading,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );
