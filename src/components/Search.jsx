@@ -12,10 +12,12 @@ import { setSearchTerm } from 'store/actions';
 export const Search = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState('Elon Musk');
-  const [debouncedValue] = useDebounce(text, 300);
+  const [debouncedValue] = useDebounce(text, 500);
 
   useEffect(() => {
-    dispatch(setSearchTerm(debouncedValue));
+    if (debouncedValue) {
+      dispatch(setSearchTerm(debouncedValue));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue]);
 

@@ -4,9 +4,10 @@ import {
   GET_RESULT_SUCCESS,
 } from '../types';
 
+// initial value of results
 const initialState = {
   data: [],
-  isLoading: false,
+  isLoading: null,
   error: null,
 };
 
@@ -15,7 +16,6 @@ const resultReducer = (state = initialState, action) => {
     case GET_RESULT_REQUEST:
       return {
         isLoading: true,
-        ...state,
       };
     case GET_RESULT_SUCCESS:
       return {
@@ -27,7 +27,7 @@ const resultReducer = (state = initialState, action) => {
       return {
         isLoading: false,
         error: action.payload,
-        ...state,
+        data: [],
       };
 
     default:
