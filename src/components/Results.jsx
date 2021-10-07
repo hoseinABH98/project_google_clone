@@ -20,6 +20,7 @@ export const Results = () => {
     } else {
       setResults([]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, location.pathname]);
 
   if (loading) return <Loading />;
