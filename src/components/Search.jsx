@@ -11,7 +11,7 @@ import { setSearchTerm } from 'store/actions';
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const [text, setText] = useState('Elon Musk');
+  const [text, setText] = useState('hosein abolhasani');
   const [debouncedValue] = useDebounce(text, 500);
 
   useEffect(() => {
