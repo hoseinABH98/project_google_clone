@@ -4,4 +4,8 @@ function useResults() {
   return useSelector((state) => state.results);
 }
 
-export { useResults };
+function useSearchTerm() {
+  return useSelector((state) => state.searchTerm);
+}
+
+export { useResults, useSearchTerm };

@@ -1,16 +1,22 @@
-import React, { useEffect, useState } from 'react';
+// hooks
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useDebounce } from 'use-debounce';
 
-import { useStateContext } from '../contexts/StateContextProvider';
-import { Links } from './Links';
+// components
+import Links from './Links';
+
+// actions
+import { setSearchTerm } from 'store/actions';
 
 export const Search = () => {
-  const { setSearchTerm } = useStateContext();
+  const dispatch = useDispatch();
   const [text, setText] = useState('Elon Musk');
   const [debouncedValue] = useDebounce(text, 300);
 
   useEffect(() => {
-    setSearchTerm(debouncedValue);
+    dispatch(setSearchTerm(debouncedValue));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue]);
 
   return (

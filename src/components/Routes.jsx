@@ -21,8 +21,6 @@ export const Routes = () => (
       <Route path="/videos">
         <Results />
       </Route>
-
     </Switch>
   </div>
-
 );

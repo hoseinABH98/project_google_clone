@@ -4,11 +4,12 @@ import ReactPlayer from 'react-player';
 
 import { useStateContext } from 'contexts/StateContextProvider';
 import { Loading } from './Loading';
+import { useSearchTerm } from 'hooks';
 
 export const Results = () => {
-  const { results, loading, getResults, searchTerm, setResults } =
-    useStateContext();
+  const { results, loading, getResults, setResults } = useStateContext();
   const location = useLocation();
+  const searchTerm = useSearchTerm();
 
   useEffect(() => {
     if (searchTerm) {
@@ -20,7 +21,6 @@ export const Results = () => {
     } else {
       setResults([]);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, location.pathname]);
 
   if (loading) return <Loading />;
